@@ -1,0 +1,340 @@
+shnavi:~$ mkdir Vaishu1
+vaishnavi_peddi@Vaishnavi:~$ cd Vaishu1
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/vaishnavi_peddi/Vaishu1/.git/
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ nano index.html
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git add .
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <vaishnavi_peddi@Vaishnavi.>) not allowed
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git config --global user.email "peddivaishnavi04@gmail.com"
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git config --global user.name "vaishnavi"
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git commit -m "first commit"
+[master (root-commit) 59976ea] first commit
+ 1 file changed, 40 insertions(+)
+ create mode 100644 index.html
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git branch
+* master
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git branch b1
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git branch
+  b1
+* master
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git checkout b1
+Switched to branch 'b1'
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git branch -m master main
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git branch
+* b1
+  main
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git checkout main
+Switched to branch 'main'
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git branch
+  b1
+* main
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git remote add Vaishu https://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@github.com/Vaishnavi-Peddi/PRO.git
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git push -u Vaishu main
+To https://github.com/Vaishnavi-Peddi/PRO.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Vaishnavi-Peddi/PRO.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git pull Vaishu main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1.52 KiB | 517.00 KiB/s, done.
+From https://github.com/Vaishnavi-Peddi/PRO
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> Vaishu/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git push -u Vaishu main
+To https://github.com/Vaishnavi-Peddi/PRO.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Vaishnavi-Peddi/PRO.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git add .
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git commit -m "commit"
+On branch main
+nothing to commit, working tree clean
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git push -u Vaishu main
+To https://github.com/Vaishnavi-Peddi/PRO.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Vaishnavi-Peddi/PRO.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git pull Vaishu main
+From https://github.com/Vaishnavi-Peddi/PRO
+ * branch            main       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git add .
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git commit -m "commit"
+On branch main
+nothing to commit, working tree clean
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git pull Vaishu main
+From https://github.com/Vaishnavi-Peddi/PRO
+ * branch            main       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git push -u Vaishu main
+To https://github.com/Vaishnavi-Peddi/PRO.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Vaishnavi-Peddi/PRO.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git remote add Vaishu11 https://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@github.com/Vaishnavi-Peddi/hello.g
+it
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git push -u Vaishu11 main
+To https://github.com/Vaishnavi-Peddi/hello.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Vaishnavi-Peddi/hello.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git remote add Vaishu1 https://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@github.com/Vaishnavi-Peddi/lab.git
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ git push -u Vaishu1 main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 793 bytes | 793.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Vaishnavi-Peddi/lab.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'Vaishu1/main'.
+vaishnavi_peddi@Vaishnavi:~/Vaishu1$ cd ..
+vaishnavi_peddi@Vaishnavi:~$ mkdir lab1
+vaishnavi_peddi@Vaishnavi:~$ cd lab1
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Doc
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build nginx
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: path "nginx" not found
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Doc
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build nginx1
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: path "nginx1" not found
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build nginx
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: path "nginx" not found
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build nginx .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/vaishnavi_peddi/lab1/Dockerfile: no such file or directory
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build -t nginx .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/vaishnavi_peddi/lab1/Dockerfile: no such file or directory
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano doc
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Doc
+vaishnavi_peddi@Vaishnavi:~/lab1$ mv Doc Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build -t nginx .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM nginx1
+pull access denied for nginx1, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build -t nginx .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM nginx
+ ---> 66f8bdd3810c
+Step 2/4 : COPY . /usr/share/nginx/html
+ ---> c2673864375e
+Step 3/4 : EXPOSE 80
+ ---> Running in bd0c5a6d7ad1
+Removing intermediate container bd0c5a6d7ad1
+ ---> 2ea42957322c
+Step 4/4 : CMD ["nginx", "-g", "daemon off;"]
+ ---> Running in 60c218c0117f
+Removing intermediate container 60c218c0117f
+ ---> 9bb6f1c40fb8
+Successfully built 9bb6f1c40fb8
+Successfully tagged nginx:latest
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker run -d -p 8088:80 nginx
+2f66861edf57ba1fd51410bf322a2818351fb27d1f38a42e40669b6e7406626d
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano index.html
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build -t nginx .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/4 : FROM nginx
+ ---> 9bb6f1c40fb8
+Step 2/4 : COPY index.html /usr/share/nginx/html
+ ---> d78c20e8a748
+Step 3/4 : EXPOSE 80
+ ---> Running in e9fdf6b4cda1
+Removing intermediate container e9fdf6b4cda1
+ ---> 675ab50c16e8
+Step 4/4 : CMD ["nginx", "-g", "daemon off;"]
+ ---> Running in 6024854bb0d3
+Removing intermediate container 6024854bb0d3
+ ---> 6e5967913f70
+Successfully built 6e5967913f70
+Successfully tagged nginx:latest
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker run -d -p 8088:80 nginx
+f8f1c5faff7cacfb8185be39095f690ee619bc5d74f5519085076f3d9c358832
+docker: Error response from daemon: driver failed programming external connectivity on endpoint angry_villani (d634696439909bdfb2aafc5f5d4a306e9b15c729d88bb8017e2f53684dce713e): Bind for 0.0.0.0:8088 failed: port is already allocated.
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker run -d -p 8082:80 nginx
+d7f1c2f570fa304a7a19fda12c1d8a4b5a9acbae71e27c8396f573265dde71ed
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker build -t nginx .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/4 : FROM nginx
+ ---> 6e5967913f70
+Step 2/4 : COPY . /usr/share/nginx/html
+ ---> afdbd9b67bf8
+Step 3/4 : EXPOSE 80
+ ---> Running in 872132beaf96
+Removing intermediate container 872132beaf96
+ ---> fc49fb797c48
+Step 4/4 : CMD ["nginx", "-g", "daemon off;"]
+ ---> Running in 9d89e4e01f3b
+Removing intermediate container 9d89e4e01f3b
+ ---> a1922ba31701
+Successfully built a1922ba31701
+Successfully tagged nginx:latest
+vaishnavi_peddi@Vaishnavi:~/lab1$ docker run -d -p 8083:80 nginx
+4248e7152cd5368882e8bbd4ec0fa53621df02e83ee585727d892e4c4f5d64b0
+vaishnavi_peddi@Vaishnavi:~/lab1$ git clone https://github.com/vaishnavi_peddi/react.git
+Cloning into 'react'...
+Username for 'https://github.com': vaishnavi_peddi
+Password for 'https://vaishnavi_peddi@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/vaishnavi_peddi/react.git/'
+vaishnavi_peddi@Vaishnavi:~/lab1$ git clone https://github.com/vaishnavi_peddi/react.git
+Cloning into 'react'...
+Username for 'https://github.com': vaishnavi_peddi
+Password for 'https://vaishnavi_peddi@github.com':
+vaishnavi_peddi@Vaishnavi:~/lab1$ git clone https://github.com/vaishnavi_peddi/react.git
+Cloning into 'react'...
+Username for 'https://github.com': vaishnavi_peddi
+Password for 'https://vaishnavi_peddi@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/vaishnavi_peddi/react.git/'
+vaishnavi_peddi@Vaishnavi:~/lab1$ git clone https://github.com/vaishnavi_peddi/react.git
+Cloning into 'react'...
+Username for 'https://github.com': vaishnavi_peddi
+Password for 'https://vaishnavi_peddi@github.com':
+remote: Repository not found.
+fatal: repository 'https://github.com/vaishnavi_peddi/react.git/' not found
+vaishnavi_peddi@Vaishnavi:~/lab1$ git clone https://github.com/Vaishnavi-Peddi/react.git
+Cloning into 'react'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 23 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (23/23), 181.03 KiB | 3.85 MiB/s, done.
+vaishnavi_peddi@Vaishnavi:~/lab1$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/lab1$

@@ -1,0 +1,1387 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+vaishnavi_peddi@Vaishnavi:~$ sudo apt update
+[sudo] password for vaishnavi_peddi:
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [463 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [97.8 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [7172 B]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [5892 B]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [561 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [149 kB]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [51.9 kB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [13.5 kB]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [434 kB]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [83.4 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [424 B]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [12.2 kB]
+Get:19 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [2940 B]
+Get:20 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Get:21 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [356 B]
+Get:22 http://archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+Get:26 http://archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+Get:28 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+Get:29 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [631 kB]
+Get:30 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [152 kB]
+Get:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [120 kB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [10.4 kB]
+Get:33 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [716 kB]
+Get:34 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [212 kB]
+Get:35 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [309 kB]
+Get:36 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [19.9 kB]
+Get:37 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [434 kB]
+Get:38 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [83.4 kB]
+Get:39 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:40 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 c-n-f Metadata [424 B]
+Get:41 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [15.0 kB]
+Get:42 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [3820 B]
+Get:43 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:44 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [552 B]
+Get:45 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+Get:46 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [112 B]
+Get:47 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [10.6 kB]
+Get:48 http://archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [10.8 kB]
+Get:49 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [21.1 kB]
+Get:50 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1104 B]
+Get:51 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:52 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:53 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:54 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+Fetched 30.6 MB in 11s (2749 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+37 packages can be upgraded. Run 'apt list --upgradable' to see them.
+vaishnavi_peddi@Vaishnavi:~$ sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+--2024-11-13 07:26:14--  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+Resolving pkg.jenkins.io (pkg.jenkins.io)... 151.101.154.133, 2a04:4e42:25::645
+Connecting to pkg.jenkins.io (pkg.jenkins.io)|151.101.154.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3175 (3.1K) [application/pgp-keys]
+Saving to: ‘/usr/share/keyrings/jenkins-keyring.asc’
+
+/usr/share/keyrings/jenkins-keyring 100%[===================================================================>]   3.10K  --.-KB/s    in 0s
+
+2024-11-13 07:26:14 (8.62 MB/s) - ‘/usr/share/keyrings/jenkins-keyring.asc’ saved [3175/3175]
+
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Ign:3 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Get:4 https://pkg.jenkins.io/debian-stable binary/ Release [2044 B]
+Get:5 https://pkg.jenkins.io/debian-stable binary/ Release.gpg [833 B]
+Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Get:7 https://pkg.jenkins.io/debian-stable binary/ Packages [28.0 kB]
+Hit:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 30.9 kB in 1s (41.2 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  net-tools
+The following NEW packages will be installed:
+  jenkins net-tools
+0 upgraded, 2 newly installed, 0 to remove and 37 not upgraded.
+Need to get 94.3 MB of archives.
+After this operation, 96.9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 net-tools amd64 2.10-0.1ubuntu4 [204 kB]
+Get:2 https://pkg.jenkins.io/debian-stable binary/ jenkins 2.479.1 [94.1 MB]
+Fetched 94.3 MB in 35s (2694 kB/s)
+Selecting previously unselected package net-tools.
+(Reading database ... 40788 files and directories currently installed.)
+Preparing to unpack .../net-tools_2.10-0.1ubuntu4_amd64.deb ...
+Unpacking net-tools (2.10-0.1ubuntu4) ...
+Selecting previously unselected package jenkins.
+Preparing to unpack .../jenkins_2.479.1_all.deb ...
+Unpacking jenkins (2.479.1) ...
+Setting up net-tools (2.10-0.1ubuntu4) ...
+Setting up jenkins (2.479.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/jenkins.service → /usr/lib/systemd/system/jenkins.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 148.
+Processing triggers for man-db (2.12.0-4build2) ...
+vaishnavi_peddi@Vaishnavi:~$ sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+openjdk version "17.0.8" 2023-07-18
+OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
+OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:2 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+37 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+fontconfig is already the newest version (2.15.0-1.1ubuntu2).
+fontconfig set to manually installed.
+The following additional packages will be installed:
+  alsa-topology-conf alsa-ucm-conf ca-certificates-java fonts-dejavu-extra java-common libasound2-data libasound2t64 libatk-wrapper-java
+  libatk-wrapper-java-jni libgif7 libice6 libnspr4 libnss3 libpcsclite1 libsm6 libxaw7 libxcb-shape0 libxft2 libxkbfile1 libxmu6 libxpm4
+  libxt6t64 libxv1 libxxf86dga1 openjdk-17-jre-headless x11-utils
+Suggested packages:
+  default-jre alsa-utils libasound2-plugins pcscd libnss-mdns fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei | fonts-wqy-zenhei
+  fonts-indic mesa-utils
+Recommended packages:
+  luit
+The following NEW packages will be installed:
+  alsa-topology-conf alsa-ucm-conf ca-certificates-java fonts-dejavu-extra java-common libasound2-data libasound2t64 libatk-wrapper-java
+  libatk-wrapper-java-jni libgif7 libice6 libnspr4 libnss3 libpcsclite1 libsm6 libxaw7 libxcb-shape0 libxft2 libxkbfile1 libxmu6 libxpm4
+  libxt6t64 libxv1 libxxf86dga1 openjdk-17-jre openjdk-17-jre-headless x11-utils
+0 upgraded, 27 newly installed, 0 to remove and 37 not upgraded.
+Need to get 53.2 MB of archives.
+After this operation, 210 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 alsa-topology-conf all 1.2.5.1-2 [15.5 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libasound2-data all 1.2.11-1build2 [21.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libasound2t64 amd64 1.2.11-1build2 [399 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 alsa-ucm-conf all 1.2.10-1ubuntu5 [63.1 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 ca-certificates-java all 20240118 [11.6 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 fonts-dejavu-extra all 2.37-8 [1947 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 java-common all 0.75+exp1 [6798 B]
+Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libice6 amd64 2:1.0.10-1build3 [41.4 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 libsm6 amd64 2:1.2.3-1build3 [15.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 libxt6t64 amd64 1:1.2.1-1.2build1 [171 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/main amd64 libxmu6 amd64 2:1.1.3-3build2 [47.6 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/main amd64 libxpm4 amd64 1:3.5.17-1build2 [36.5 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble/main amd64 libxaw7 amd64 2:1.0.14-1build2 [187 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble/main amd64 libxcb-shape0 amd64 1.15-1ubuntu2 [6100 B]
+Get:15 http://archive.ubuntu.com/ubuntu noble/main amd64 libxft2 amd64 2.3.6-1build1 [45.3 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble/main amd64 libxkbfile1 amd64 1:1.1.0-1build4 [70.0 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble/main amd64 libxv1 amd64 2:1.0.11-1.1build1 [10.7 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble/main amd64 libxxf86dga1 amd64 2:1.1.5-1build1 [11.6 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble/main amd64 x11-utils amd64 7.7+6build2 [189 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble/main amd64 libatk-wrapper-java all 0.40.0-3build2 [54.3 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble/main amd64 libatk-wrapper-java-jni amd64 0.40.0-3build2 [46.4 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble/main amd64 libgif7 amd64 5.2.2-1ubuntu1 [35.2 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble/main amd64 libnspr4 amd64 2:4.35-1.1build1 [117 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble/main amd64 libnss3 amd64 2:3.98-1build1 [1445 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble/main amd64 libpcsclite1 amd64 2.0.3-1build1 [21.4 kB]
+Get:26 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openjdk-17-jre-headless amd64 17.0.13+11-2ubuntu1~24.04 [48.0 MB]
+Get:27 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openjdk-17-jre amd64 17.0.13+11-2ubuntu1~24.04 [228 kB]
+Fetched 53.2 MB in 19s (2822 kB/s)
+Selecting previously unselected package alsa-topology-conf.
+(Reading database ... 40851 files and directories currently installed.)
+Preparing to unpack .../00-alsa-topology-conf_1.2.5.1-2_all.deb ...
+Unpacking alsa-topology-conf (1.2.5.1-2) ...
+Selecting previously unselected package libasound2-data.
+Preparing to unpack .../01-libasound2-data_1.2.11-1build2_all.deb ...
+Unpacking libasound2-data (1.2.11-1build2) ...
+Selecting previously unselected package libasound2t64:amd64.
+Preparing to unpack .../02-libasound2t64_1.2.11-1build2_amd64.deb ...
+Unpacking libasound2t64:amd64 (1.2.11-1build2) ...
+Selecting previously unselected package alsa-ucm-conf.
+Preparing to unpack .../03-alsa-ucm-conf_1.2.10-1ubuntu5_all.deb ...
+Unpacking alsa-ucm-conf (1.2.10-1ubuntu5) ...
+Selecting previously unselected package ca-certificates-java.
+Preparing to unpack .../04-ca-certificates-java_20240118_all.deb ...
+Unpacking ca-certificates-java (20240118) ...
+Selecting previously unselected package fonts-dejavu-extra.
+Preparing to unpack .../05-fonts-dejavu-extra_2.37-8_all.deb ...
+Unpacking fonts-dejavu-extra (2.37-8) ...
+Selecting previously unselected package java-common.
+Preparing to unpack .../06-java-common_0.75+exp1_all.deb ...
+Unpacking java-common (0.75+exp1) ...
+Selecting previously unselected package libice6:amd64.
+Preparing to unpack .../07-libice6_2%3a1.0.10-1build3_amd64.deb ...
+Unpacking libice6:amd64 (2:1.0.10-1build3) ...
+Selecting previously unselected package libsm6:amd64.
+Preparing to unpack .../08-libsm6_2%3a1.2.3-1build3_amd64.deb ...
+Unpacking libsm6:amd64 (2:1.2.3-1build3) ...
+Selecting previously unselected package libxt6t64:amd64.
+Preparing to unpack .../09-libxt6t64_1%3a1.2.1-1.2build1_amd64.deb ...
+Unpacking libxt6t64:amd64 (1:1.2.1-1.2build1) ...
+Selecting previously unselected package libxmu6:amd64.
+Preparing to unpack .../10-libxmu6_2%3a1.1.3-3build2_amd64.deb ...
+Unpacking libxmu6:amd64 (2:1.1.3-3build2) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../11-libxpm4_1%3a3.5.17-1build2_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.17-1build2) ...
+Selecting previously unselected package libxaw7:amd64.
+Preparing to unpack .../12-libxaw7_2%3a1.0.14-1build2_amd64.deb ...
+Unpacking libxaw7:amd64 (2:1.0.14-1build2) ...
+Selecting previously unselected package libxcb-shape0:amd64.
+Preparing to unpack .../13-libxcb-shape0_1.15-1ubuntu2_amd64.deb ...
+Unpacking libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+Selecting previously unselected package libxft2:amd64.
+Preparing to unpack .../14-libxft2_2.3.6-1build1_amd64.deb ...
+Unpacking libxft2:amd64 (2.3.6-1build1) ...
+Selecting previously unselected package libxkbfile1:amd64.
+Preparing to unpack .../15-libxkbfile1_1%3a1.1.0-1build4_amd64.deb ...
+Unpacking libxkbfile1:amd64 (1:1.1.0-1build4) ...
+Selecting previously unselected package libxv1:amd64.
+Preparing to unpack .../16-libxv1_2%3a1.0.11-1.1build1_amd64.deb ...
+Unpacking libxv1:amd64 (2:1.0.11-1.1build1) ...
+Selecting previously unselected package libxxf86dga1:amd64.
+Preparing to unpack .../17-libxxf86dga1_2%3a1.1.5-1build1_amd64.deb ...
+Unpacking libxxf86dga1:amd64 (2:1.1.5-1build1) ...
+Selecting previously unselected package x11-utils.
+Preparing to unpack .../18-x11-utils_7.7+6build2_amd64.deb ...
+Unpacking x11-utils (7.7+6build2) ...
+Selecting previously unselected package libatk-wrapper-java.
+Preparing to unpack .../19-libatk-wrapper-java_0.40.0-3build2_all.deb ...
+Unpacking libatk-wrapper-java (0.40.0-3build2) ...
+Selecting previously unselected package libatk-wrapper-java-jni:amd64.
+Preparing to unpack .../20-libatk-wrapper-java-jni_0.40.0-3build2_amd64.deb ...
+Unpacking libatk-wrapper-java-jni:amd64 (0.40.0-3build2) ...
+Selecting previously unselected package libgif7:amd64.
+Preparing to unpack .../21-libgif7_5.2.2-1ubuntu1_amd64.deb ...
+Unpacking libgif7:amd64 (5.2.2-1ubuntu1) ...
+Selecting previously unselected package libnspr4:amd64.
+Preparing to unpack .../22-libnspr4_2%3a4.35-1.1build1_amd64.deb ...
+Unpacking libnspr4:amd64 (2:4.35-1.1build1) ...
+Selecting previously unselected package libnss3:amd64.
+Preparing to unpack .../23-libnss3_2%3a3.98-1build1_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.98-1build1) ...
+Selecting previously unselected package libpcsclite1:amd64.
+Preparing to unpack .../24-libpcsclite1_2.0.3-1build1_amd64.deb ...
+Unpacking libpcsclite1:amd64 (2.0.3-1build1) ...
+Selecting previously unselected package openjdk-17-jre-headless:amd64.
+Preparing to unpack .../25-openjdk-17-jre-headless_17.0.13+11-2ubuntu1~24.04_amd64.deb ...
+Unpacking openjdk-17-jre-headless:amd64 (17.0.13+11-2ubuntu1~24.04) ...
+Selecting previously unselected package openjdk-17-jre:amd64.
+Preparing to unpack .../26-openjdk-17-jre_17.0.13+11-2ubuntu1~24.04_amd64.deb ...
+Unpacking openjdk-17-jre:amd64 (17.0.13+11-2ubuntu1~24.04) ...
+Setting up libice6:amd64 (2:1.0.10-1build3) ...
+Setting up libxft2:amd64 (2.3.6-1build1) ...
+Setting up libxpm4:amd64 (1:3.5.17-1build2) ...
+Setting up java-common (0.75+exp1) ...
+Setting up libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+Setting up libxxf86dga1:amd64 (2:1.1.5-1build1) ...
+Setting up libasound2-data (1.2.11-1build2) ...
+Setting up libasound2t64:amd64 (1.2.11-1build2) ...
+Setting up libnspr4:amd64 (2:4.35-1.1build1) ...
+Setting up libxv1:amd64 (2:1.0.11-1.1build1) ...
+Setting up libpcsclite1:amd64 (2.0.3-1build1) ...
+Setting up libgif7:amd64 (5.2.2-1ubuntu1) ...
+Setting up fonts-dejavu-extra (2.37-8) ...
+Setting up alsa-topology-conf (1.2.5.1-2) ...
+Setting up libxkbfile1:amd64 (1:1.1.0-1build4) ...
+Setting up ca-certificates-java (20240118) ...
+No JRE found. Skipping Java certificates setup.
+Setting up libsm6:amd64 (2:1.2.3-1build3) ...
+Setting up alsa-ucm-conf (1.2.10-1ubuntu5) ...
+Setting up libnss3:amd64 (2:3.98-1build1) ...
+Setting up libxt6t64:amd64 (1:1.2.1-1.2build1) ...
+Setting up openjdk-17-jre-headless:amd64 (17.0.13+11-2ubuntu1~24.04) ...
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jpackage to provide /usr/bin/jpackage (jpackage) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Setting up libxmu6:amd64 (2:1.1.3-3build2) ...
+Setting up libxaw7:amd64 (2:1.0.14-1build2) ...
+Setting up x11-utils (7.7+6build2) ...
+Setting up libatk-wrapper-java (0.40.0-3build2) ...
+Setting up libatk-wrapper-java-jni:amd64 (0.40.0-3build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for ca-certificates-java (20240118) ...
+Adding debian:ACCVRAIZ1.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+Adding debian:ANF_Secure_Server_Root_CA.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:Atos_TrustedRoot_Root_CA_ECC_TLS_2021.pem
+Adding debian:Atos_TrustedRoot_Root_CA_RSA_TLS_2021.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:BJCA_Global_Root_CA1.pem
+Adding debian:BJCA_Global_Root_CA2.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:Certainly_Root_E1.pem
+Adding debian:Certainly_Root_R1.pem
+Adding debian:Certigna.pem
+Adding debian:Certigna_Root_CA.pem
+Adding debian:Certum_EC-384_CA.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:Certum_Trusted_Root_CA.pem
+Adding debian:CommScope_Public_Trust_ECC_Root-01.pem
+Adding debian:CommScope_Public_Trust_ECC_Root-02.pem
+Adding debian:CommScope_Public_Trust_RSA_Root-01.pem
+Adding debian:CommScope_Public_Trust_RSA_Root-02.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:D-TRUST_BR_Root_CA_1_2020.pem
+Adding debian:D-TRUST_EV_Root_CA_1_2020.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:DigiCert_TLS_ECC_P384_Root_G5.pem
+Adding debian:DigiCert_TLS_RSA4096_Root_G5.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G4.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:GLOBALTRUST_2020.pem
+Adding debian:GTS_Root_R1.pem
+Adding debian:GTS_Root_R2.pem
+Adding debian:GTS_Root_R3.pem
+Adding debian:GTS_Root_R4.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:GlobalSign_Root_CA_-_R6.pem
+Adding debian:GlobalSign_Root_E46.pem
+Adding debian:GlobalSign_Root_R46.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:HARICA_TLS_ECC_Root_CA_2021.pem
+Adding debian:HARICA_TLS_RSA_Root_CA_2021.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:HiPKI_Root_CA_-_G1.pem
+Adding debian:Hongkong_Post_Root_CA_3.pem
+Adding debian:ISRG_Root_X1.pem
+Adding debian:ISRG_Root_X2.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:Izenpe.com.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:Microsoft_ECC_Root_Certificate_Authority_2017.pem
+Adding debian:Microsoft_RSA_Root_Certificate_Authority_2017.pem
+Adding debian:NAVER_Global_Root_Certification_Authority.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:SSL.com_TLS_ECC_Root_CA_2022.pem
+Adding debian:SSL.com_TLS_RSA_Root_CA_2022.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:Sectigo_Public_Server_Authentication_Root_E46.pem
+Adding debian:Sectigo_Public_Server_Authentication_Root_R46.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:Security_Communication_ECC_RootCA1.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:Security_Communication_RootCA3.pem
+Adding debian:Security_Communication_Root_CA.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:Telia_Root_CA_v2.pem
+Adding debian:TrustAsia_Global_Root_CA_G3.pem
+Adding debian:TrustAsia_Global_Root_CA_G4.pem
+Adding debian:Trustwave_Global_Certification_Authority.pem
+Adding debian:Trustwave_Global_ECC_P256_Certification_Authority.pem
+Adding debian:Trustwave_Global_ECC_P384_Certification_Authority.pem
+Adding debian:TunTrust_Root_CA.pem
+Adding debian:UCA_Extended_Validation_Root.pem
+Adding debian:UCA_Global_G2_Root.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:certSIGN_Root_CA_G2.pem
+Adding debian:e-Szigno_Root_CA_2017.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:emSign_ECC_Root_CA_-_C3.pem
+Adding debian:emSign_ECC_Root_CA_-_G3.pem
+Adding debian:emSign_Root_CA_-_C1.pem
+Adding debian:emSign_Root_CA_-_G1.pem
+Adding debian:vTrus_ECC_Root_CA.pem
+Adding debian:vTrus_Root_CA.pem
+done.
+Setting up openjdk-17-jre:amd64 (17.0.13+11-2ubuntu1~24.04) ...
+openjdk version "17.0.13" 2024-10-15
+OpenJDK Runtime Environment (build 17.0.13+11-Ubuntu-2ubuntu124.04)
+OpenJDK 64-Bit Server VM (build 17.0.13+11-Ubuntu-2ubuntu124.04, mixed mode, sharing)
+Command 'openjdk' not found, but can be installed with:
+sudo snap install openjdk
+-bash: syntax error near unexpected token `('
+-bash: syntax error near unexpected token `('
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl enable jenkins
+Synchronizing state of jenkins.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl start jenkins
+Job for jenkins.service failed because the control process exited with error code.
+See "systemctl status jenkins.service" and "journalctl -xeu jenkins.service" for details.
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl status jenkins.service
+× jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/usr/lib/systemd/system/jenkins.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Wed 2024-11-13 07:27:00 UTC; 1min 41s ago
+   Main PID: 1373 (code=exited, status=1/FAILURE)
+
+Nov 13 07:27:00 Vaishnavi systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 5.
+Nov 13 07:27:00 Vaishnavi systemd[1]: jenkins.service: Start request repeated too quickly.
+Nov 13 07:27:00 Vaishnavi systemd[1]: jenkins.service: Failed with result 'exit-code'.
+Nov 13 07:27:00 Vaishnavi systemd[1]: Failed to start jenkins.service - Jenkins Continuous Integration Server.
+Nov 13 07:28:13 Vaishnavi systemd[1]: jenkins.service: Start request repeated too quickly.
+Nov 13 07:28:13 Vaishnavi systemd[1]: jenkins.service: Failed with result 'exit-code'.
+Nov 13 07:28:13 Vaishnavi systemd[1]: Failed to start jenkins.service - Jenkins Continuous Integration Server.
+vaishnavi_peddi@Vaishnavi:~$ sudo journalctl -xeu jenkins.service
+Nov 13 07:27:00 Vaishnavi systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ Automatic restarting of the unit jenkins.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Nov 13 07:27:00 Vaishnavi systemd[1]: jenkins.service: Start request repeated too quickly.
+Nov 13 07:27:00 Vaishnavi systemd[1]: jenkins.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ The unit jenkins.service has entered the 'failed' state with result 'exit-code'.
+Nov 13 07:27:00 Vaishnavi systemd[1]: Failed to start jenkins.service - Jenkins Continuous Integration Server.
+░░ Subject: A start job for unit jenkins.service has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ A start job for unit jenkins.service has finished with a failure.
+░░
+░░ The job identifier is 1147 and the job result is failed.
+Nov 13 07:28:13 Vaishnavi systemd[1]: jenkins.service: Start request repeated too quickly.
+Nov 13 07:28:13 Vaishnavi systemd[1]: jenkins.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ The unit jenkins.service has entered the 'failed' state with result 'exit-code'.
+Nov 13 07:28:13 Vaishnavi systemd[1]: Failed to start jenkins.service - Jenkins Continuous Integration Server.
+░░ Subject: A start job for unit jenkins.service has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ A start job for unit jenkins.service has finished with a failure.
+░░
+░░ The job identifier is 1361 and the job result is failed.
+
+vaishnavi_peddi@Vaishnavi:~$ sudo tail -n 50 /var/log/jenkins/jenkins.log
+tail: cannot open '/var/log/jenkins/jenkins.log' for reading: No such file or directory
+vaishnavi_peddi@Vaishnavi:~$ sudo ls -ld /var/lib/jenkins
+drwxr-xr-x 2 jenkins jenkins 4096 Oct 30 13:30 /var/lib/jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo lsof -i :8080
+vaishnavi_peddi@Vaishnavi:~$ sudo nano /etc/default/jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo lsof -i :8081
+vaishnavi_peddi@Vaishnavi:~$ sudo apt-get remove --purge jenkins
+sudo apt-get update
+sudo apt-get install jenkins
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  net-tools
+Use 'sudo apt autoremove' to remove it.
+The following packages will be REMOVED:
+  jenkins*
+0 upgraded, 0 newly installed, 1 to remove and 37 not upgraded.
+After this operation, 96.1 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 42127 files and directories currently installed.)
+Removing jenkins (2.479.1) ...
+(Reading database ... 42115 files and directories currently installed.)
+Purging configuration files for jenkins (2.479.1) ...
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:2 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  jenkins
+0 upgraded, 1 newly installed, 0 to remove and 37 not upgraded.
+Need to get 0 B/94.1 MB of archives.
+After this operation, 96.1 MB of additional disk space will be used.
+Selecting previously unselected package jenkins.
+(Reading database ... 42112 files and directories currently installed.)
+Preparing to unpack .../jenkins_2.479.1_all.deb ...
+Unpacking jenkins (2.479.1) ...
+Setting up jenkins (2.479.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/jenkins.service → /usr/lib/systemd/system/jenkins.service.
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl start jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl enable jenkins
+Synchronizing state of jenkins.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable jenkins
+vaishnavi_peddi@Vaishnavi:~$ jenkins start
+Running from: /usr/share/java/jenkins.war
+webroot: /home/vaishnavi_peddi/.jenkins/war
+2024-11-13 07:33:24.974+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2024-11-13 07:33:25.513+0000 [id=1]     WARNING o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2024-11-13 07:33:25.663+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-12.0.13; built: 2024-09-03T03:04:05.240Z; git: 816018a420329c1cacd4116799cda8c8c60a57cd; jvm 17.0.13+11-Ubuntu-2ubuntu124.04
+2024-11-13 07:33:25.689+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStop: Stopped oejs.Server@1339e7aa{STOPPING}[12.0.13,sto=0]
+2024-11-13 07:33:25.690+0000 [id=1]     INFO    winstone.Logger#logInternal: Jetty shutdown successfully
+java.io.IOException: Failed to start Jetty
+        at Jenkins Main ClassLoader//winstone.Launcher.<init>(Launcher.java:194)
+        at Jenkins Main ClassLoader//winstone.Launcher.main(Launcher.java:490)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+        at executable.Main.main(Main.java:335)
+Caused by: java.io.IOException: Failed to bind to 0.0.0.0/0.0.0.0:8080
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:349)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:313)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:552)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+        at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+        at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.Server.doStart(Server.java:548)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+        at Jenkins Main ClassLoader//winstone.Launcher.<init>(Launcher.java:190)
+        ... 6 more
+Caused by: java.net.BindException: Address already in use
+        at java.base/sun.nio.ch.Net.bind0(Native Method)
+        at java.base/sun.nio.ch.Net.bind(Net.java:555)
+        at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+        at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:344)
+        ... 21 more
+2024-11-13 07:33:25.698+0000 [id=1]     SEVERE  winstone.Logger#logInternal: Container startup failed
+java.net.BindException: Address already in use
+        at java.base/sun.nio.ch.Net.bind0(Native Method)
+        at java.base/sun.nio.ch.Net.bind(Net.java:555)
+        at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+        at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:344)
+Caused: java.io.IOException: Failed to bind to 0.0.0.0/0.0.0.0:8080
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:349)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:313)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:552)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+        at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+        at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.server.Server.doStart(Server.java:548)
+        at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+        at Jenkins Main ClassLoader//winstone.Launcher.<init>(Launcher.java:190)
+Caused: java.io.IOException: Failed to start Jetty
+        at Jenkins Main ClassLoader//winstone.Launcher.<init>(Launcher.java:194)
+        at Jenkins Main ClassLoader//winstone.Launcher.main(Launcher.java:490)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+        at executable.Main.main(Main.java:335)
+vaishnavi_peddi@Vaishnavi:~$ sudo lsof -i :8080
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+java    3103 jenkins    8u  IPv6  48493      0t0  TCP *:http-alt (LISTEN)
+vaishnavi_peddi@Vaishnavi:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+84a4876e066944c1863f65e39b27f089
+vaishnavi_peddi@Vaishnavi:~$
+
+
+
+
+
+vaishnavi_peddi@Vaishnavi:~$ docker run --name mycontainer -it ubuntu:16.04 /bin/bash
+Unable to find image 'ubuntu:16.04' locally
+16.04: Pulling from library/ubuntu
+58690f9b18fc: Pull complete
+b51569e7c507: Pull complete
+da8ef40b9eca: Pull complete
+fb15d46c38dc: Pull complete
+Digest: sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6
+Status: Downloaded newer image for ubuntu:16.04
+root@1fb4edd56204:/# groups $USER
+root
+root@1fb4edd56204:/# sudo systemctl start docker
+bash: sudo: command not found
+root@1fb4edd56204:/# docker start mycontainer
+bash: docker: command not found
+root@1fb4edd56204:/# start mycontainer
+bash: start: command not found
+root@1fb4edd56204:/# images
+bash: images: command not found
+root@1fb4edd56204:/# exit
+exit
+vaishnavi_peddi@Vaishnavi:~$ docker --version
+Docker version 24.0.7, build 24.0.7-0ubuntu4.1
+vaishnavi_peddi@Vaishnavi:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       16.04     b6f507652425   3 years ago   135MB
+vaishnavi_peddi@Vaishnavi:~$ docker stop mycontainer
+mycontainer
+vaishnavi_peddi@Vaishnavi:~$ docker start mycontainer
+mycontainer
+vaishnavi_peddi@Vaishnavi:~$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS          PORTS     NAMES
+1fb4edd56204   ubuntu:16.04   "/bin/bash"   5 minutes ago   Up 24 seconds             mycontainer
+vaishnavi_peddi@Vaishnavi:~$ docker pull ubuntu:16.04
+16.04: Pulling from library/ubuntu
+Digest: sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6
+Status: Image is up to date for ubuntu:16.04
+docker.io/library/ubuntu:16.04
+vaishnavi_peddi@Vaishnavi:~$ docker push myimage
+Using default tag: latest
+The push refers to repository [docker.io/library/myimage]
+An image does not exist locally with the tag: myimage
+vaishnavi_peddi@Vaishnavi:~$
+
+
+
+docker
+
+
+
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Nov 19 14:00:47 UTC 2024
+
+  System load:  1.95                Processes:             51
+  Usage of /:   0.3% of 1006.85GB   Users logged in:       0
+  Memory usage: 16%                 IPv4 address for eth0: 172.20.125.69
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/vaishnavi_peddi/.hushlogin file.
+vaishnavi_peddi@Vaishnavi:~$ which docker
+/usr/bin/docker
+vaishnavi_peddi@Vaishnavi:~$ which git
+/usr/bin/git
+vaishnavi_peddi@Vaishnavi:~$ which jemkins
+vaishnavi_peddi@Vaishnavi:~$ which jenkins
+/usr/bin/jenkins
+vaishnavi_peddi@Vaishnavi:~$ docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+2d429b9e73a6: Pull complete
+9b1039c85176: Pull complete
+9ad567d3b8a2: Pull complete
+773c63cd62e4: Pull complete
+1d2712910bdf: Pull complete
+4b0adc47c460: Pull complete
+171eebbdf235: Pull complete
+Digest: sha256:bc5eac5eafc581aeda3008b4b1f07ebba230de2f27d47767129a6a905c84f470
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd -p 8082:80 nginx
+46fd32e1ae37a0c17a7b07dcb6306d3d4fc51e3359c693ee5b8ba8f237be1dae
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd -p 8083:80 tomcat
+Unable to find image 'tomcat:latest' locally
+latest: Pulling from library/tomcat
+afad30e59d72: Pull complete
+918d361e6529: Pull complete
+cf4dd2a7e40b: Pull complete
+d152af7a0148: Pull complete
+a5d7958ebd69: Pull complete
+409b41a58ed4: Pull complete
+4f4fb700ef54: Pull complete
+9eabaa92f491: Pull complete
+Digest: sha256:2ade2b0a424a446601688adc36c4dc568dfe5198f75c99c93352c412186ba3c9
+Status: Downloaded newer image for tomcat:latest
+06a59c5550fbbd589e4e2f747394bef3aac7cdc39c10b68b73ef7db167460f3e
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd -p 8083:80 tomcat
+c7fa31138d2f462bae734f524c14ed1792a731e921e39411b56094104e372ffa
+docker: Error response from daemon: driver failed programming external connectivity on endpoint amazing_shtern (7e7140736a9e85a8bc9dabb1a50380e3d82348006bf8c8165bbc8f31b90cdd59): Bind for 0.0.0.0:8083 failed: port is already allocated.
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd -p 8084:80 tomcat8.0
+Unable to find image 'tomcat8.0:latest' locally
+docker: Error response from daemon: pull access denied for tomcat8.0, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+vaishnavi_peddi@Vaishnavi:~$ docker run --help
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Create and run a new container from an image
+
+Aliases:
+  docker container run, docker run
+
+Options:
+      --add-host list                  Add a custom host-to-IP mapping (host:ip)
+      --annotation map                 Add an annotation to the container (passed through to the OCI runtime) (default map[])
+  -a, --attach list                    Attach to STDIN, STDOUT or STDERR
+      --blkio-weight uint16            Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
+      --blkio-weight-device list       Block IO weight (relative device weight) (default [])
+      --cap-add list                   Add Linux capabilities
+      --cap-drop list                  Drop Linux capabilities
+      --cgroup-parent string           Optional parent cgroup for the container
+      --cgroupns string                Cgroup namespace to use (host|private)
+                                       'host':    Run the container in the Docker host's cgroup namespace
+                                       'private': Run the container in its own private cgroup namespace
+                                       '':        Use the cgroup namespace as configured by the
+                                                  default-cgroupns-mode option on the daemon (default)
+      --cidfile string                 Write the container ID to the file
+      --cpu-period int                 Limit CPU CFS (Completely Fair Scheduler) period
+      --cpu-quota int                  Limit CPU CFS (Completely Fair Scheduler) quota
+      --cpu-rt-period int              Limit CPU real-time period in microseconds
+      --cpu-rt-runtime int             Limit CPU real-time runtime in microseconds
+  -c, --cpu-shares int                 CPU shares (relative weight)
+      --cpus decimal                   Number of CPUs
+      --cpuset-cpus string             CPUs in which to allow execution (0-3, 0,1)
+      --cpuset-mems string             MEMs in which to allow execution (0-3, 0,1)
+  -d, --detach                         Run container in background and print container ID
+      --detach-keys string             Override the key sequence for detaching a container
+      --device list                    Add a host device to the container
+      --device-cgroup-rule list        Add a rule to the cgroup allowed devices list
+      --device-read-bps list           Limit read rate (bytes per second) from a device (default [])
+      --device-read-iops list          Limit read rate (IO per second) from a device (default [])
+      --device-write-bps list          Limit write rate (bytes per second) to a device (default [])
+      --device-write-iops list         Limit write rate (IO per second) to a device (default [])
+      --disable-content-trust          Skip image verification (default true)
+      --dns list                       Set custom DNS servers
+      --dns-option list                Set DNS options
+      --dns-search list                Set custom DNS search domains
+      --domainname string              Container NIS domain name
+      --entrypoint string              Overwrite the default ENTRYPOINT of the image
+  -e, --env list                       Set environment variables
+      --env-file list                  Read in a file of environment variables
+      --expose list                    Expose a port or a range of ports
+      --gpus gpu-request               GPU devices to add to the container ('all' to pass all GPUs)
+      --group-add list                 Add additional groups to join
+      --health-cmd string              Command to run to check health
+      --health-interval duration       Time between running the check (ms|s|m|h) (default 0s)
+      --health-retries int             Consecutive failures needed to report unhealthy
+      --health-start-period duration   Start period for the container to initialize before starting health-retries countdown (ms|s|m|h)
+                                       (default 0s)
+      --health-timeout duration        Maximum time to allow one check to run (ms|s|m|h) (default 0s)
+      --help                           Print usage
+  -h, --hostname string                Container host name
+      --init                           Run an init inside the container that forwards signals and reaps processes
+  -i, --interactive                    Keep STDIN open even if not attached
+      --ip string                      IPv4 address (e.g., 172.30.100.104)
+      --ip6 string                     IPv6 address (e.g., 2001:db8::33)
+      --ipc string                     IPC mode to use
+      --isolation string               Container isolation technology
+      --kernel-memory bytes            Kernel memory limit
+  -l, --label list                     Set meta data on a container
+      --label-file list                Read in a line delimited file of labels
+      --link list                      Add link to another container
+      --link-local-ip list             Container IPv4/IPv6 link-local addresses
+      --log-driver string              Logging driver for the container
+      --log-opt list                   Log driver options
+      --mac-address string             Container MAC address (e.g., 92:d0:c6:0a:29:33)
+  -m, --memory bytes                   Memory limit
+      --memory-reservation bytes       Memory soft limit
+      --memory-swap bytes              Swap limit equal to memory plus swap: '-1' to enable unlimited swap
+      --memory-swappiness int          Tune container memory swappiness (0 to 100) (default -1)
+      --mount mount                    Attach a filesystem mount to the container
+      --name string                    Assign a name to the container
+      --network network                Connect a container to a network
+      --network-alias list             Add network-scoped alias for the container
+      --no-healthcheck                 Disable any container-specified HEALTHCHECK
+      --oom-kill-disable               Disable OOM Killer
+      --oom-score-adj int              Tune host's OOM preferences (-1000 to 1000)
+      --pid string                     PID namespace to use
+      --pids-limit int                 Tune container pids limit (set -1 for unlimited)
+      --platform string                Set platform if server is multi-platform capable
+      --privileged                     Give extended privileges to this container
+  -p, --publish list                   Publish a container's port(s) to the host
+  -P, --publish-all                    Publish all exposed ports to random ports
+      --pull string                    Pull image before running ("always", "missing", "never") (default "missing")
+  -q, --quiet                          Suppress the pull output
+      --read-only                      Mount the container's root filesystem as read only
+      --restart string                 Restart policy to apply when a container exits (default "no")
+      --rm                             Automatically remove the container when it exits
+      --runtime string                 Runtime to use for this container
+      --security-opt list              Security Options
+      --shm-size bytes                 Size of /dev/shm
+      --sig-proxy                      Proxy received signals to the process (default true)
+      --stop-signal string             Signal to stop the container
+      --stop-timeout int               Timeout (in seconds) to stop a container
+      --storage-opt list               Storage driver options for the container
+      --sysctl map                     Sysctl options (default map[])
+      --tmpfs list                     Mount a tmpfs directory
+  -t, --tty                            Allocate a pseudo-TTY
+      --ulimit ulimit                  Ulimit options (default [])
+  -u, --user string                    Username or UID (format: <name|uid>[:<group|gid>])
+      --userns string                  User namespace to use
+      --uts string                     UTS namespace to use
+  -v, --volume list                    Bind mount a volume
+      --volume-driver string           Optional volume driver for the container
+      --volumes-from list              Mount volumes from the specified container(s)
+  -w, --workdir string                 Working directory inside the container
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd -p 8086:80 tomcat:8.0
+Unable to find image 'tomcat:8.0' locally
+8.0: Pulling from library/tomcat
+f189db1b88b3: Pull complete
+3d06cf2f1b5e: Pull complete
+edd0da9e3091: Pull complete
+eb7768aae14e: Pull complete                                                                                                                     e2780f585e0f: Pull complete                                                                                                                     e5ed720afeba: Pull complete
+d9e134700cfc: Pull complete
+e4804b33d02a: Pull complete
+b9df0c24315e: Pull complete
+49fdae8eaa20: Pull complete
+1aea3d9a32e6: Pull complete
+Digest: sha256:8ecb10948deb32c34aeadf7bf95d12a93fbd3527911fa629c1a3e7823b89ce6f
+Status: Downloaded newer image for tomcat:8.0
+fba638bf6e8c0b0888dc76bfc6304408b950f62b50d2ea507ef6e59f818ca3dd
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd -p 8086:80 tomcat:8.0
+5ad6c1f0a815286612debc8aee19b087707033abba1f16b68e1a32845329f7a6
+docker: Error response from daemon: driver failed programming external connectivity on endpoint infallible_banach (a225b848b7e4e670f1f489095785bcf215501f598b099786f3c1abe96be11025): Bind for 0.0.0.0:8086 failed: port is already allocated.
+vaishnavi_peddi@Vaishnavi:~$ docker ps
+CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS                                             NAMES
+fba638bf6e8c   tomcat:8.0   "catalina.sh run"        2 minutes ago   Up 2 minutes   8080/tcp, 0.0.0.0:8086->80/tcp, :::8086->80/tcp   happy_kilby
+06a59c5550fb   tomcat       "catalina.sh run"        6 minutes ago   Up 6 minutes   8080/tcp, 0.0.0.0:8083->80/tcp, :::8083->80/tcp   pedantic_bardeen
+46fd32e1ae37   nginx        "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes   0.0.0.0:8082->80/tcp, :::8082->80/tcp             dreamy_spence
+vaishnavi_peddi@Vaishnavi:~$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                        PORTS
+       NAMES
+5ad6c1f0a815   tomcat:8.0     "catalina.sh run"        2 minutes ago   Created
+       infallible_banach
+fba638bf6e8c   tomcat:8.0     "catalina.sh run"        2 minutes ago   Up 2 minutes                  8080/tcp, 0.0.0.0:8086->80/tcp, :::8086->80/tcp   happy_kilby
+c7fa31138d2f   tomcat         "catalina.sh run"        6 minutes ago   Created
+       amazing_shtern
+06a59c5550fb   tomcat         "catalina.sh run"        7 minutes ago   Up 7 minutes                  8080/tcp, 0.0.0.0:8083->80/tcp, :::8083->80/tcp   pedantic_bardeen
+46fd32e1ae37   nginx          "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes                  0.0.0.0:8082->80/tcp, :::8082->80/tcp             dreamy_spence
+1fb4edd56204   ubuntu:16.04   "/bin/bash"              6 days ago      Exited (255) 10 minutes ago
+       mycontainer
+vaishnavi_peddi@Vaishnavi:~$ docker restart fba638bf6e8c
+fba638bf6e8c
+vaishnavi_peddi@Vaishnavi:~$ docker run -itd --name tomcat8 -p 8084:8080 tomcat:8.0
+b12053e8c818a69834fac7ef77fea6e610d29476a64ec45aeb8068b95acc3ef2
+vaishnavi_peddi@Vaishnavi:~$
+
+
+
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+vaishnavi_peddi@Vaishnavi:~$ docker login
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username: vaishnavipeddi08
+Password:
+WARNING! Your password will be stored unencrypted in /home/vaishnavi_peddi/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+vaishnavi_peddi@Vaishnavi:~$ docker build -t vaishu .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  110.5MB
+Step 1/4 : From vaishu
+pull access denied for vaishu, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+vaishnavi_peddi@Vaishnavi:~$ mkdir 5d8
+vaishnavi_peddi@Vaishnavi:~$ cd 5d8
+vaishnavi_peddi@Vaishnavi:~/5d8$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker build -t vaishu .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : From vaishu
+pull access denied for vaishu, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+vaishnavi_peddi@Vaishnavi:~/5d8$ nano Dockerfile
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker build -t vaishu .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM nginx:latest
+ ---> 60c8a892f36f
+Step 2/2 : COPY . /usr/share/nginx/html
+ ---> 1a22b0c3948f
+Successfully built 1a22b0c3948f
+Successfully tagged vaishu:latest
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker run -t vaishu .
+/docker-entrypoint.sh: 47: exec: .: Permission denied
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker run -t vaishu
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2024/11/19 14:33:19 [notice] 1#1: using the "epoll" event method
+2024/11/19 14:33:19 [notice] 1#1: nginx/1.27.2
+2024/11/19 14:33:19 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+2024/11/19 14:33:19 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2024/11/19 14:33:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/11/19 14:33:19 [notice] 1#1: start worker processes
+2024/11/19 14:33:19 [notice] 1#1: start worker process 30
+2024/11/19 14:33:19 [notice] 1#1: start worker process 31
+2024/11/19 14:33:19 [notice] 1#1: start worker process 32
+2024/11/19 14:33:19 [notice] 1#1: start worker process 33
+2024/11/19 14:33:19 [notice] 1#1: start worker process 34
+2024/11/19 14:33:19 [notice] 1#1: start worker process 35
+2024/11/19 14:33:19 [notice] 1#1: start worker process 36
+2024/11/19 14:33:19 [notice] 1#1: start worker process 37
+^C2024/11/19 14:33:51 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2024/11/19 14:33:51 [notice] 30#30: exiting
+2024/11/19 14:33:51 [notice] 32#32: exiting
+2024/11/19 14:33:51 [notice] 33#33: exiting
+2024/11/19 14:33:51 [notice] 31#31: exiting
+2024/11/19 14:33:51 [notice] 33#33: exit
+2024/11/19 14:33:51 [notice] 30#30: exit
+2024/11/19 14:33:51 [notice] 32#32: exit
+2024/11/19 14:33:51 [notice] 34#34: exiting
+2024/11/19 14:33:51 [notice] 35#35: exiting
+2024/11/19 14:33:51 [notice] 31#31: exit
+2024/11/19 14:33:51 [notice] 34#34: exit
+2024/11/19 14:33:51 [notice] 35#35: exit
+2024/11/19 14:33:51 [notice] 36#36: exiting
+2024/11/19 14:33:51 [notice] 37#37: exiting
+2024/11/19 14:33:51 [notice] 37#37: exit
+2024/11/19 14:33:51 [notice] 36#36: exit
+2024/11/19 14:33:51 [notice] 1#1: signal 14 (SIGALRM) received
+2024/11/19 14:33:51 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2024/11/19 14:33:51 [notice] 1#1: worker process 32 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: signal 29 (SIGIO) received
+2024/11/19 14:33:51 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2024/11/19 14:33:51 [notice] 1#1: worker process 31 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: worker process 33 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: worker process 34 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: worker process 35 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: worker process 36 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: signal 29 (SIGIO) received
+2024/11/19 14:33:51 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2024/11/19 14:33:51 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2024/11/19 14:33:51 [notice] 1#1: worker process 30 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: signal 29 (SIGIO) received
+2024/11/19 14:33:51 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2024/11/19 14:33:51 [notice] 1#1: worker process 37 exited with code 0
+2024/11/19 14:33:51 [notice] 1#1: exit
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker ls
+docker: 'ls' is not a docker command.
+See 'docker --help'
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker ps
+CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS          PORTS                                             NAMES
+b12053e8c818   tomcat:8.0   "catalina.sh run"        19 minutes ago   Up 19 minutes   0.0.0.0:8084->8080/tcp, :::8084->8080/tcp         tomcat8
+fba638bf6e8c   tomcat:8.0   "catalina.sh run"        25 minutes ago   Up 19 minutes   8080/tcp, 0.0.0.0:8086->80/tcp, :::8086->80/tcp   happy_kilby
+06a59c5550fb   tomcat       "catalina.sh run"        30 minutes ago   Up 30 minutes   8080/tcp, 0.0.0.0:8083->80/tcp, :::8083->80/tcp   pedantic_bardeen
+46fd32e1ae37   nginx        "/docker-entrypoint.…"   31 minutes ago   Up 31 minutes   0.0.0.0:8082->80/tcp, :::8082->80/tcp             dreamy_spence
+vaishnavi_peddi@Vaishnavi:~/5d8$ docker run -it -p 8088:80 vaishu
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2024/11/19 14:35:27 [notice] 1#1: using the "epoll" event method
+2024/11/19 14:35:27 [notice] 1#1: nginx/1.27.2
+2024/11/19 14:35:27 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+2024/11/19 14:35:27 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2024/11/19 14:35:27 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/11/19 14:35:27 [notice] 1#1: start worker processes
+2024/11/19 14:35:27 [notice] 1#1: start worker process 29
+2024/11/19 14:35:27 [notice] 1#1: start worker process 30
+2024/11/19 14:35:27 [notice] 1#1: start worker process 31
+2024/11/19 14:35:27 [notice] 1#1: start worker process 32
+2024/11/19 14:35:27 [notice] 1#1: start worker process 33
+2024/11/19 14:35:27 [notice] 1#1: start worker process 34
+2024/11/19 14:35:27 [notice] 1#1: start worker process 35
+2024/11/19 14:35:27 [notice] 1#1: start worker process 36
+172.17.0.1 - - [19/Nov/2024:14:35:50 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "-"
+2024/11/19 14:35:51 [error] 30#30: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.17.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8088", referrer: "http://localhost:8088/"
+172.17.0.1 - - [19/Nov/2024:14:35:51 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:8088/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "-"
+^C2024/11/19 14:35:59 [notice] 35#35: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 36#36: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 35#35: exiting
+2024/11/19 14:35:59 [notice] 34#34: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 36#36: exiting
+2024/11/19 14:35:59 [notice] 33#33: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 34#34: exiting
+2024/11/19 14:35:59 [notice] 35#35: exit
+2024/11/19 14:35:59 [notice] 33#33: exiting
+2024/11/19 14:35:59 [notice] 31#31: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 36#36: exit
+2024/11/19 14:35:59 [notice] 34#34: exit
+2024/11/19 14:35:59 [notice] 32#32: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 33#33: exit
+2024/11/19 14:35:59 [notice] 32#32: exiting
+2024/11/19 14:35:59 [notice] 30#30: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 30#30: exiting
+2024/11/19 14:35:59 [notice] 32#32: exit
+2024/11/19 14:35:59 [notice] 30#30: exit
+2024/11/19 14:35:59 [notice] 29#29: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 29#29: exiting
+2024/11/19 14:35:59 [notice] 29#29: exit
+2024/11/19 14:35:59 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2024/11/19 14:35:59 [notice] 31#31: exiting
+2024/11/19 14:35:59 [notice] 31#31: exit
+2024/11/19 14:35:59 [notice] 1#1: signal 14 (SIGALRM) received
+2024/11/19 14:35:59 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2024/11/19 14:35:59 [notice] 1#1: worker process 29 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: worker process 32 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: worker process 36 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: signal 29 (SIGIO) received
+2024/11/19 14:35:59 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2024/11/19 14:35:59 [notice] 1#1: worker process 33 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: worker process 34 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: signal 29 (SIGIO) received
+2024/11/19 14:35:59 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2024/11/19 14:35:59 [notice] 1#1: worker process 31 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: signal 29 (SIGIO) received
+2024/11/19 14:35:59 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2024/11/19 14:35:59 [notice] 1#1: worker process 30 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: worker process 35 exited with code 0
+2024/11/19 14:35:59 [notice] 1#1: exit
+
+
+
+
+
+04/12/2024
+
+
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Dec  4 14:04:53 UTC 2024
+
+  System load:  0.92                Processes:             35
+  Usage of /:   0.4% of 1006.85GB   Users logged in:       0
+  Memory usage: 18%                 IPv4 address for eth0: 172.20.125.69
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/vaishnavi_peddi/.hushlogin file.
+vaishnavi_peddi@Vaishnavi:~$ which docker
+/usr/bin/docker
+vaishnavi_peddi@Vaishnavi:~$ which jenkins
+/usr/bin/jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo apt update
+[sudo] password for vaishnavi_peddi:
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Ign:2 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Get:3 https://pkg.jenkins.io/debian-stable binary/ Release [2044 B]
+Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:5 https://pkg.jenkins.io/debian-stable binary/ Release.gpg [833 B]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:7 https://pkg.jenkins.io/debian-stable binary/ Packages [28.2 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [498 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [102 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [7232 B]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [563 kB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [150 kB]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [51.9 kB]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [480 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [674 kB]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [92.5 kB]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:19 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [158 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [132 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [720 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [214 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [310 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [480 kB]
+Get:26 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [92.5 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:28 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [3964 B]
+Get:29 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:30 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+Get:31 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [10.7 kB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [10.8 kB]
+Get:33 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [11.7 kB]
+Get:34 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:35 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Fetched 5174 kB in 4s (1250 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+55 packages can be upgraded. Run 'apt list --upgradable' to see them.
+vaishnavi_peddi@Vaishnavi:~$ which java
+/usr/bin/java
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl enable jenkins
+Synchronizing state of jenkins.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl start jenkins
+vaishnavi_peddi@Vaishnavi:~$ /var/lib/jenkins
+-bash: /var/lib/jenkins: Is a directory
+vaishnavi_peddi@Vaishnavi:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+cat: /var/lib/jenkins/secrets/initialAdminPassword: No such file or directory
+vaishnavi_peddi@Vaishnavi:~$ sudo cat /usr/lib/jenkins/secrets/initialAdminPassword
+cat: /usr/lib/jenkins/secrets/initialAdminPassword: No such file or directory
+vaishnavi_peddi@Vaishnavi:~$ sudo cat /etc/default/jenkins | grep JENKINS_HOME
+JENKINS_HOME=/var/lib/$NAME
+#   Note also that the particularly sensitive part of $JENKINS_HOME (such as credentials) are always
+vaishnavi_peddi@Vaishnavi:~$ /var/lib/$NAME
+-bash: /var/lib/Vaishnavi: No such file or directory
+vaishnavi_peddi@Vaishnavi:~$ sudo apt-get purge jenkins
+sudo apt-get install jenkins
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  net-tools
+Use 'sudo apt autoremove' to remove it.
+The following packages will be REMOVED:
+  jenkins*
+0 upgraded, 0 newly installed, 1 to remove and 54 not upgraded.
+After this operation, 96.1 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 45067 files and directories currently installed.)
+Removing jenkins (2.479.1) ...
+(Reading database ... 45057 files and directories currently installed.)
+Purging configuration files for jenkins (2.479.1) ...
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  jenkins
+0 upgraded, 1 newly installed, 0 to remove and 54 not upgraded.
+Need to get 94.1 MB of archives.
+After this operation, 96.1 MB of additional disk space will be used.
+Get:1 https://pkg.jenkins.io/debian-stable binary/ jenkins 2.479.2 [94.1 MB]
+Fetched 94.1 MB in 31s (3075 kB/s)
+Selecting previously unselected package jenkins.
+(Reading database ... 45052 files and directories currently installed.)
+Preparing to unpack .../jenkins_2.479.2_all.deb ...
+Unpacking jenkins (2.479.2) ...
+Setting up jenkins (2.479.2) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/jenkins.service → /usr/lib/systemd/system/jenkins.service.
+vaishnavi_peddi@Vaishnavi:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+c13b132337934d32874d09beb0bf89c9
+vaishnavi_peddi@Vaishnavi:~$ /etc/default/jenkins
+-bash: /etc/default/jenkins: Permission denied
+vaishnavi_peddi@Vaishnavi:~$ sudo cat /etc/default/jenkins
+# defaults for Jenkins automation server
+
+# pulled in from the init script; makes things easier.
+NAME=jenkins
+
+# arguments to pass to java
+
+# Allow graphs etc. to work even when an X server is present
+JAVA_ARGS="-Djava.awt.headless=true"
+
+#JAVA_ARGS="-Xmx256m"
+
+# make jenkins listen on IPv4 address
+#JAVA_ARGS="-Djava.net.preferIPv4Stack=true"
+
+PIDFILE=/var/run/$NAME/$NAME.pid
+
+# user and group to be invoked as (default to jenkins)
+JENKINS_USER=$NAME
+JENKINS_GROUP=$NAME
+
+# location of the jenkins war file
+JENKINS_WAR=/usr/share/java/$NAME.war
+
+# jenkins home location
+JENKINS_HOME=/var/lib/$NAME
+
+# set this to false if you don't want Jenkins to run by itself
+# in this set up, you are expected to provide a servlet container
+# to host jenkins.
+RUN_STANDALONE=true
+
+# log location.  this may be a syslog facility.priority
+JENKINS_LOG=/var/log/$NAME/$NAME.log
+#JENKINS_LOG=daemon.info
+
+# Whether to enable web access logging or not.
+# Set to "yes" to enable logging to /var/log/$NAME/access_log
+JENKINS_ENABLE_ACCESS_LOG="no"
+
+# OS LIMITS SETUP
+#   comment this out to observe /etc/security/limits.conf
+#   this is on by default because http://github.com/jenkinsci/jenkins/commit/2fb288474e980d0e7ff9c4a3b768874835a3e92e
+#   reported that Ubuntu's PAM configuration doesn't include pam_limits.so, and as a result the # of file
+#   descriptors are forced to 1024 regardless of /etc/security/limits.conf
+MAXOPENFILES=8192
+
+# set the umask to control permission bits of files that Jenkins creates.
+#   027 makes files read-only for group and inaccessible for others, which some security sensitive users
+#   might consider benefitial, especially if Jenkins runs in a box that's used for multiple purposes.
+#   Beware that 027 permission would interfere with sudo scripts that run on the master (JENKINS-25065.)
+#
+#   Note also that the particularly sensitive part of $JENKINS_HOME (such as credentials) are always
+#   written without 'others' access. So the umask values only affect job configuration, build records,
+#   that sort of things.
+#
+#   If commented out, the value from the OS is inherited,  which is normally 022 (as of Ubuntu 12.04,
+#   by default umask comes from pam_umask(8) and /etc/login.defs
+
+# UMASK=027
+
+# port for HTTP connector (default 8080; disable with -1)
+HTTP_PORT=8080
+
+
+# servlet context, important if you want to use apache proxying
+PREFIX=/$NAME
+
+# arguments to pass to jenkins.
+# full list available from java -jar jenkins.war --help
+# --javaHome=$JAVA_HOME
+# --httpListenAddress=$HTTP_HOST (default 0.0.0.0)
+# --httpPort=$HTTP_PORT (default 8080; disable with -1)
+# --httpsPort=$HTTP_PORT
+# --argumentsRealm.passwd.$ADMIN_USER=[password]
+# --argumentsRealm.roles.$ADMIN_USER=admin
+# --webroot=~/.jenkins/war
+# --prefix=$PREFIX
+
+JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT"
+vaishnavi_peddi@Vaishnavi:~$ sudo nano /etc/default/jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl start jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl restart jenkins
+^C
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl restart jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo nano /etc/default/jenkins
+[sudo] password for vaishnavi_peddi:
+Sorry, try again.
+[sudo] password for vaishnavi_peddi:
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl restart jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo nano /etc/default/jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl restart jenkins
+vaishnavi_peddi@Vaishnavi:~$ E-mail Notification
+SMTP server
+smtp.gmail.com
+Default user e-mail suffix
+?
+@yourdomain.com
+Advanced
+Edited
+
+Use SMTP Authentication
+?
+User Name
+peddivaishnavi04@gmail.com
+For security when using authentication it is recommended to enable either TLS or SSL
+Password
+•••••••••••••••••••
+
+Use SSL
+?
+
+Use TLS
+SMTP Port
+?
+465
+Reply-To Address
+Charset
+UTF-8
+
+Test configuration by sending test e-mail
+Test e-mail recipient
+peddivaishnavi04@gmail.com
+Test configuration
+Email was successfully sent^C
+vaishnavi_peddi@Vaishnavi:~$ sudo lsof -i :8000
+vaishnavi_peddi@Vaishnavi:~$ sudo lsof -i :8080
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+java    4014 jenkins    8u  IPv6  54085      0t0  TCP *:http-alt (LISTEN)
+vaishnavi_peddi@Vaishnavi:~$ sudo nano /etc/default/jenkins
+vaishnavi_peddi@Vaishnavi:~$ sudo nano /lib/systemd/system/jenkins.service
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl restart jenkins
+Warning: The unit file, source configuration file or drop-ins of jenkins.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+^C
+vaishnavi_peddi@Vaishnavi:~$ ^C
+vaishnavi_peddi@Vaishnavi:~$ systemctl daemon-reload
+Reload daemon failed: Interactive authentication required.
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl daemon-reload
+vaishnavi_peddi@Vaishnavi:~$ sudo systemctl restart jenkins
+vaishnavi_peddi@Vaishnavi:~$ ^C
+vaishnavi_peddi@Vaishnavi:~$ docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+bc0965b23a04: Pull complete
+650ee30bbe5e: Pull complete
+8cc1569e58f5: Pull complete
+362f35df001b: Pull complete
+13e320bf29cd: Pull complete
+7b50399908e1: Pull complete
+57b64962dd94: Pull complete
+Digest: sha256:fb197595ebe76b9c0c14ab68159fd3c08bd067ec62300583543f0ebda353b5be
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+vaishnavi_peddi@Vaishnavi:~$ docker run -d -p 8092:80 nginx
+a1c733a86244472ace2032019817289781188f72fb8a59b9e79fe5dd6ba7e566
+vaishnavi_peddi@Vaishnavi:~$
