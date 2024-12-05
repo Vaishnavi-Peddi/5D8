@@ -338,3 +338,32 @@ remote: Total 23 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 Receiving objects: 100% (23/23), 181.03 KiB | 3.85 MiB/s, done.
 vaishnavi_peddi@Vaishnavi:~/lab1$ nano Dockerfile
 vaishnavi_peddi@Vaishnavi:~/lab1$
+
+
+
+
+# Use the official Nginx image from the Docker Hub
+FROM nginx
+
+# Copy your HTML files into the container at the default Nginx location
+COPY . /usr/share/nginx/html
+
+# Expose port 80 (default for Nginx)
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+sudo apt update
+sudo apt install docker.io 
+
+
+sudo nano /etc/default/jenkins
+sudo nano /lib/systemd/system/jenkins.service
+sudo systemctl daemon-reload
+sudo systemctl restart jenkins
+
+
+
